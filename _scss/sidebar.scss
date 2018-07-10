@@ -1,0 +1,87 @@
+aside {
+  position: fixed;
+  background: #FFF;
+  top: 0; bottom: 0;
+  right: -80vw;
+  width: 80vw;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: right 0.2s cubic-bezier(.25,.8,.25,1);
+  &.active {
+    right: 0;
+  }
+  #sidebar-title-box {
+    height: 6rem;
+    overflow-y: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  #doc-toc {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    margin: 0;
+    height: calc(100vh - 6rem);
+    overflow-y: scroll;
+    counter-reset: toc_chapter 0;
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0;
+    overflow: hidden;
+  }
+  hr {
+    color: rgba(#000, 0.15);
+    border: none;
+    background-color: rgba(#000, 0.15);
+    height: 2px;
+  }
+  h1,
+  h2 {
+    line-height: 1.1;
+    margin: 0;
+    text-align: center;
+  }
+  h1 {
+    padding-top: 1rem;
+  }
+  h2 {
+    color: rgba(#000, 0.5);
+  }
+  a {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00796B;
+    &::before {
+      content: counter(toc_chapter)". ";
+      counter-increment: toc_chapter;
+    }
+  }
+}
+.btn-toc {
+  position: fixed;
+  top: 0.5rem;
+  right: 0;
+  border-top-left-radius: 33%;
+  border-bottom-left-radius: 33%;
+  width: 3.3rem;
+  height: 3rem;
+  background: #1A237E;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: right 0.2s cubic-bezier(.25,.8,.25,1);
+  &.active {
+    right: 80vw;
+  }
+  .logo {
+    margin: 0.1rem 0.1rem;
+    width: 3rem;
+  }
+}

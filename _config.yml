@@ -1,0 +1,15 @@
+title: "Freethinkers::회칙"
+url: "https://freethinkers-kr.github.io/"
+baseurl: "rules-view/"
+
+timezone: Asia/Seoul
+permalink: pretty
+encoding: UTF-8
+markdown: kramdown
+
+sass:
+  sass_dir: _scss
+  style: compressed
+
+kramdown:
+  toc_levels: '1'
