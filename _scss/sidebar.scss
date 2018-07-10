@@ -6,6 +6,15 @@ aside {
   width: 80vw;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: right 0.2s cubic-bezier(.25,.8,.25,1);
+  @include media(s){
+    right: -45.5vw;
+    width: 45.5vw;
+  }
+  @include media(m){
+    width: 325px;
+    right: unset;
+    left: 0;
+  }
   &.active {
     right: 0;
   }
@@ -23,6 +32,9 @@ aside {
     height: calc(100vh - 6rem);
     overflow-y: scroll;
     counter-reset: toc_chapter 0;
+    @include media(m) {
+      padding-left: 0;
+    }
   }
   ul {
     list-style: none;
@@ -32,6 +44,9 @@ aside {
     line-height: 3rem;
     margin: 0;
     overflow: hidden;
+    @include media(m) {
+      height: 2.3rem;
+    }
   }
   hr {
     color: rgba(#000, 0.15);
@@ -56,10 +71,22 @@ aside {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 2rem;
     font-size: 1.1rem;
     font-weight: bold;
     color: #00796B;
+    @include media(m) {
+      font-size: 1rem;
+      height: 2.3rem;
+      line-height: 2.3rem;
+      display: block;
+      border-radius: 2px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      &:hover {
+        color: #FFFFFF;
+        background: #00796B;
+      }
+    }
     &::before {
       content: counter(toc_chapter)". ";
       counter-increment: toc_chapter;
@@ -77,8 +104,14 @@ aside {
   background: #1A237E;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: right 0.2s cubic-bezier(.25,.8,.25,1);
+  @include media(m){
+    display: none;
+  }
   &.active {
     right: 80vw;
+    @include media(s){
+      right: 45.5vw;
+    }
   }
   .logo {
     margin: 0.1rem 0.1rem;

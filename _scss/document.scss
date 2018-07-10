@@ -3,9 +3,19 @@ body {
   line-height: 1.6;
   counter-reset: chapter 0;
   font-family: 'Gothic A1', sans-serif;
+  background: rgba(#000, 0.2);
+  @include media(m){
+    margin-left: 325px;
+  }
 }
 article {
   padding: 0.5rem;
+  margin: auto;
+  background: rgba(#FFF, 0.9);
+  @include media(s){
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    max-width: 550px;
+  }
   h1 {
     text-align: center;
     &::before {
